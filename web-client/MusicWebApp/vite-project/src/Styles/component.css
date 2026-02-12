@@ -1,0 +1,8 @@
+/* button, card dùng lại */
+
+/* css cho header */
+.nav-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}

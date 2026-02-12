@@ -1,0 +1,19 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "AuthenticationService\\AuthenticationService.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "MusicService\\MusicService.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "ApiGatewayService\\ApiGatewayService.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

@@ -1,0 +1,53 @@
+1.npx create-expo-app . -t expo-template-blank-typescript
+Chú ý: Dấu chấm . nghĩa là "khởi tạo vào thư mục hiện tại".
+Lúc này nó sẽ không tạo thêm folder mới nữa.
+
+2.Cài đặt dependencies (nếu chưa có)
+npm install
+
+3.Chạy app bằng Expo
+npx expo start
+
+tao nhanh ham trong react: rfc
+tao nhanh ham trong react native: rnfes
+
+them npm i formik
+Formik là một thư viện cho React/React Native chuyên dùng để:
+✅ Quản lý state của form (giá trị nhập, touched, error, …).
+✅ Xử lý validation (hợp lệ dữ liệu, bắt buộc nhập, email, password, …).
+✅ Quản lý sự kiện submit form một cách gọn gàng.
+📌 Bình thường khi làm form
+Nếu không dùng Formik, bạn phải:
+Tự khai báo useState cho từng ô input (username, password, email...).
+Tự viết hàm onChangeText để update state.
+Tự viết validation (if trống, if email sai, …).
+Tự viết onSubmit để gom dữ liệu.
+👉 Code sẽ khá dài và lặp lại.
+📌 Khi dùng Formik
+Formik gom hết những việc đó lại:
+Bạn chỉ cần khai báo initialValues.
+Viết schema validation (thường kết hợp với Yup).
+Xài handleChange, handleBlur, values, errors, touched do Formik cung cấp.
+
+cai thu vien yup
+npm install yup
+
+4.cai navigation:
+expo install react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-masked-view/masked-view
+npm install @react-navigation/stack
+npm install @react-navigation/native
+
+cai de navigation footer:
+npm install @react-navigation/bottom-tabs
+
+de su dung icon:
+npm install @expo/vector-icons
+len: https://icons.expo.fyi/Index/Ionicons/paper-plane-outline. de kiem icon minh can
+
+de chinh mau vung thanh dieu huongcua dt
+npx expo install expo-navigation-bar
+
+
+npx expo install @react-native-community/slider
+
+

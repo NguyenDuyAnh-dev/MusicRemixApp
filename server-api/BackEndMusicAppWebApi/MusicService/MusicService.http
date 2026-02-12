@@ -1,0 +1,6 @@
+@MusicService_HostAddress = http://localhost:5117
+
+GET {{MusicService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

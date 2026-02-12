@@ -1,0 +1,55 @@
+Cấu trúc thư mục
+auth-service/
+│
+├── Domain/
+│   └── Entities/
+│       └── ApplicationUser.cs
+│
+├── Application/
+│   ├── DTOs/
+│   │   ├── RegisterRequest.cs
+│   │   └── LoginRequest.cs
+│   └── Services/
+│       └── AuthService.cs
+│
+├── Infrastructure/
+│   ├── Data/
+│   │   └── AuthDbContext.cs
+|   |   |_Repo
+│   └── appsettings.json
+│
+├── Controllers/
+│   └── AuthController.cs
+│
+└── Program.cs
+
+Các thư viện cần cài
+dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
+dotnet add package System.IdentityModel.Tokens.Jwt
+
+de doc chuoi connection string trong json thi cai
+dotnet add package Microsoft.Extensions.Configuration.Json
+
+de su dung auto mapper thi cai
+dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
+
+de su dung upload file len supabase 
+dotnet add package Supabase
+
+
+bai nay su dung api gateway la YARP nen cai:
+dotnet add package Yarp.ReverseProxy
+cai o api gateway cai nay de nhan jwt
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer 
+
+de doc dc duration cua cac file video thi cai
+dotnet add package TagLibSharp
+
+CICD thay vi su dung rabbitmq hay kaffka thi su dung cua azure la: service bus
+
+
+
