@@ -98,7 +98,7 @@ namespace AuthenticationService.Application.Services
                 new Claim(ClaimTypes.Email, user.Email)
             };
 
-            claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
+            claims.AddRange(roles.Select(role => new Claim("role", role)));
 
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);

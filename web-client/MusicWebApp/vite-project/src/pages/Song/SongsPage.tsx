@@ -6,7 +6,7 @@ import { useSongs } from "../../hooks/useSongs";
 export default function SongsPage() {
 
   const { user } = useAuth();
-  const isAdmin = user?.role === "ADMIN";
+  const isAdmin = user?.role?.toUpperCase() === "ADMIN";
   const navigate = useNavigate();
 
 
