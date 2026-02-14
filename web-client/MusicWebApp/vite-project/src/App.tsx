@@ -9,6 +9,12 @@ import ProfilePage from "./pages/Profile/ProfilePage";
 import LoginPage from "./pages/Login/LoginPage";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import SongDetailPage from "./pages/SongDetail/SongDetailPage";
+import { CreateSongPage } from "./pages/Song/CreateSongPage";
+import CreateSingerPage from "./pages/Singer/CreateSingerPage";
+import UpdateSingerPage from "./pages/Singer/UpdateSingerPage";
+import UpdateSongPage from "./pages/Song/UpdateSongPage";
+
+
 
 function App() {
   return (
@@ -26,7 +32,13 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="/singer/create" element={<CreateSingerPage />} />
+        <Route path="/singer/update/:id" element={<UpdateSingerPage />} />
+
         <Route path="/songs" element={<SongsPage />} />
+        <Route path="/songs/create" element={<CreateSongPage />} />
+        <Route path="/songs/update/:songId" element={<UpdateSongPage />} />
+
         <Route path="/songs/:songId" element={<SongDetailPage />} />
         <Route path="/favorite" element={<FavoritePage />} />
 

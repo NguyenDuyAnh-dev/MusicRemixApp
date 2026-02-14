@@ -2,6 +2,7 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../auth/AuthContext";
 import { useSongs } from "../../hooks/useSongs";
+import { deleteSong } from "../../api/song.api";
 
 export default function SongsPage() {
 
@@ -20,6 +21,19 @@ export default function SongsPage() {
     formatDuration
   } = useSongs(8);
 
+  const handleDelete = async (id: string) => {
+    if (!window.confirm("Delete this song?")) return;
+
+    try {
+      await deleteSong(id);
+      setPage(p => p); // trigger reload nếu useSongs phụ thuộc page
+    } catch (err) {
+      console.error(err);
+      alert("Delete failed");
+    }
+  };
+
+
   return (
     <div>
       {/* Header + Add button */}
@@ -29,7 +43,7 @@ export default function SongsPage() {
         {isAdmin && (
           <button
             className="px-4 py-2 bg-violet-600 hover:bg-violet-700 rounded-lg text-white"
-            onClick={() => console.log("Open add modal")}
+            onClick={() => navigate("/songs/create")}
           >
             + Add Song
           </button>
@@ -44,9 +58,35 @@ export default function SongsPage() {
           <span className="col-span-2 text-right">⏱</span>
         </div>
         {songs.map((song, i) => (
-          <div className="grid grid-cols-12 items-center px-6 py-4 border-b border-neutral-800 text-neutral-300 hover:bg-neutral-800/50" key={i}
-          onClick={() => navigate(`/songs/${song.id}`)}>
+          <div
+            key={song.id}
+            className="group relative grid grid-cols-12 items-center px-6 py-4 border-b border-neutral-800 text-neutral-300 hover:bg-neutral-800/50 cursor-pointer"
+            onClick={() => navigate(`/songs/${song.id}`)}
+          >
+            {/* ADMIN ACTIONS */}
+            {isAdmin && (
+              <div
+                className="absolute right-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition flex gap-2"
+                onClick={(e) => e.stopPropagation()} // tránh click row
+              >
+                <button
+                  onClick={() => navigate(`/songs/update/${song.id}`)}
+                  className="px-2 py-1 text-xs bg-blue-600 hover:bg-blue-700 rounded text-white"
+                >
+                  Update
+                </button>
+
+                <button
+                  onClick={() => handleDelete(song.id)}
+                  className="px-2 py-1 text-xs bg-red-600 hover:bg-red-700 rounded text-white"
+                >
+                  Delete
+                </button>
+              </div>
+            )}
+
             <span className="col-span-1">{i + 1}</span>
+
             <span className="col-span-4 flex gap-2 items-center">
               <img
                 src={
@@ -57,17 +97,22 @@ export default function SongsPage() {
               />
               <span>{song.title}</span>
             </span>
+
             <span className="col-span-3">
               {singerMap[song.singerId] ? (
-                <>
-                  <span>{singerMap[song.singerId].name}</span>
-                </>
+                <span>{singerMap[song.singerId].name}</span>
               ) : (
                 <span className="text-neutral-500">Loading...</span>
               )}
             </span>
-            <span className="col-span-2 text-center text-pink-400 text-xl">❤</span>
-            <span className="col-span-2 text-right">{formatDuration(song.duration)}</span>
+
+            <span className="col-span-2 text-center text-pink-400 text-xl">
+              ❤
+            </span>
+
+            <span className="col-span-2 text-right">
+              {formatDuration(song.duration)}
+            </span>
           </div>
         ))}
       </div>

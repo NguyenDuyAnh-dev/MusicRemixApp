@@ -8,6 +8,7 @@ namespace MusicService.Application.Services
     {
         Task<List<SongResponse>> GetAllAsync();
         Task<PagedResponse<SongResponse>> GetAllPagedAsync(int pageNumber, int pageSize);
+        Task<List<SongResponse>> GetBySingerIdAsync(Guid singerId);
         Task<SongResponse?> GetByIdAsync(Guid id);
         Task<SongResponse> AddAsync(Guid singerId, SongCreateRequest request);
         Task<SongResponse> UpdateAsync(Guid songId, SongUpdaterequest request);

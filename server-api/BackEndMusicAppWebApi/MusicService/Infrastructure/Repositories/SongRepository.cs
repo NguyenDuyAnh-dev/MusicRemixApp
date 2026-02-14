@@ -31,6 +31,9 @@ namespace MusicService.Infrastructure.Repositories
             return (items, totalCount);
         }
 
+        public Task<List<Song>> GetBySingerIdAsync(Guid singerId) =>
+            _db.Songs.Include(s => s.Singer).Where(s => s.SingerId == singerId).ToListAsync();
+
         public Task<Song?> GetByIdAsync(Guid id) =>
             _db.Songs.Include(s => s.Singer).FirstOrDefaultAsync(x => x.Id == id);
 

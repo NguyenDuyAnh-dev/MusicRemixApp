@@ -44,6 +44,13 @@ namespace MusicService.Application.Services
             };
         }
 
+        public async Task<List<SongResponse>> GetBySingerIdAsync(Guid singerId)
+        {
+            var songs = await _repo.GetBySingerIdAsync(singerId);
+            var results = _mapper.Map<List<SongResponse>>(songs);
+            return results;
+        }
+
         public async Task<SongResponse?> GetByIdAsync(Guid id)
         {
             var song = await _repo.GetByIdAsync(id);

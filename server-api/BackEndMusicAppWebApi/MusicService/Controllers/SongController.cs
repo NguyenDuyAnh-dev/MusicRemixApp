@@ -33,6 +33,13 @@ namespace MusicService.Controllers
             return Ok(result);
         }
 
+        [HttpGet("singer/{singerId}")]
+        public async Task<IActionResult> GetBySingerId(Guid singerId)
+        {
+            var songs = await _service.GetBySingerIdAsync(singerId);
+            return Ok(songs);
+        }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(Guid id)
         {

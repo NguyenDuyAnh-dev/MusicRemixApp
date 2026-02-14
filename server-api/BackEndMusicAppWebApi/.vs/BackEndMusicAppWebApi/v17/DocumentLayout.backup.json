@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "D:\\PRN232\\BackEndMusicAppWebApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{369CB16E-1670-4ADB-B291-9549CE585031}|MusicService\\MusicService.csproj|d:\\prn232\\backendmusicappwebapi\\musicservice\\infrastructure\\repositories\\songrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{369CB16E-1670-4ADB-B291-9549CE585031}|MusicService\\MusicService.csproj|solutionrelative:musicservice\\infrastructure\\repositories\\songrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{369CB16E-1670-4ADB-B291-9549CE585031}|MusicService\\MusicService.csproj|d:\\prn232\\backendmusicappwebapi\\musicservice\\application\\services\\songservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{369CB16E-1670-4ADB-B291-9549CE585031}|MusicService\\MusicService.csproj|solutionrelative:musicservice\\application\\services\\songservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{369CB16E-1670-4ADB-B291-9549CE585031}|MusicService\\MusicService.csproj|d:\\prn232\\backendmusicappwebapi\\musicservice\\controllers\\songcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{369CB16E-1670-4ADB-B291-9549CE585031}|MusicService\\MusicService.csproj|solutionrelative:musicservice\\controllers\\songcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{369CB16E-1670-4ADB-B291-9549CE585031}|MusicService\\MusicService.csproj|d:\\prn232\\backendmusicappwebapi\\musicservice\\infrastructure\\helper\\streamfileabstraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{369CB16E-1670-4ADB-B291-9549CE585031}|MusicService\\MusicService.csproj|solutionrelative:musicservice\\infrastructure\\helper\\streamfileabstraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{324DA62E-30CC-4998-AED7-4CFE9659353A}|AuthenticationService\\AuthenticationService.csproj|d:\\prn232\\backendmusicappwebapi\\authenticationservice\\application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{324DA62E-30CC-4998-AED7-4CFE9659353A}|AuthenticationService\\AuthenticationService.csproj|solutionrelative:authenticationservice\\application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -79,6 +95,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "SongController.cs",
+              "DocumentMoniker": "D:\\PRN232\\BackEndMusicAppWebApi\\MusicService\\Controllers\\SongController.cs",
+              "RelativeDocumentMoniker": "MusicService\\Controllers\\SongController.cs",
+              "ToolTip": "D:\\PRN232\\BackEndMusicAppWebApi\\MusicService\\Controllers\\SongController.cs",
+              "RelativeToolTip": "MusicService\\Controllers\\SongController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwCYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T08:55:14.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SongService.cs",
+              "DocumentMoniker": "D:\\PRN232\\BackEndMusicAppWebApi\\MusicService\\Application\\Services\\SongService.cs",
+              "RelativeDocumentMoniker": "MusicService\\Application\\Services\\SongService.cs",
+              "ToolTip": "D:\\PRN232\\BackEndMusicAppWebApi\\MusicService\\Application\\Services\\SongService.cs",
+              "RelativeToolTip": "MusicService\\Application\\Services\\SongService.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowDAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T08:54:00.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SongRepository.cs",
+              "DocumentMoniker": "D:\\PRN232\\BackEndMusicAppWebApi\\MusicService\\Infrastructure\\Repositories\\SongRepository.cs",
+              "RelativeDocumentMoniker": "MusicService\\Infrastructure\\Repositories\\SongRepository.cs",
+              "ToolTip": "D:\\PRN232\\BackEndMusicAppWebApi\\MusicService\\Infrastructure\\Repositories\\SongRepository.cs",
+              "RelativeToolTip": "MusicService\\Infrastructure\\Repositories\\SongRepository.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowCQAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T08:52:45.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StreamFileAbstraction.cs",
+              "DocumentMoniker": "D:\\PRN232\\BackEndMusicAppWebApi\\MusicService\\Infrastructure\\Helper\\StreamFileAbstraction.cs",
+              "RelativeDocumentMoniker": "MusicService\\Infrastructure\\Helper\\StreamFileAbstraction.cs",
+              "ToolTip": "D:\\PRN232\\BackEndMusicAppWebApi\\MusicService\\Infrastructure\\Helper\\StreamFileAbstraction.cs",
+              "RelativeToolTip": "MusicService\\Infrastructure\\Helper\\StreamFileAbstraction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T08:52:21.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "RoleSeeder.cs",
               "DocumentMoniker": "D:\\PRN232\\BackEndMusicAppWebApi\\AuthenticationService\\Infrastructure\\Identity\\RoleSeeder.cs",
               "RelativeDocumentMoniker": "AuthenticationService\\Infrastructure\\Identity\\RoleSeeder.cs",
@@ -86,12 +154,11 @@
               "RelativeToolTip": "AuthenticationService\\Infrastructure\\Identity\\RoleSeeder.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T15:11:04.681Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T15:11:04.681Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "RegisterDto.cs",
               "DocumentMoniker": "D:\\PRN232\\BackEndMusicAppWebApi\\AuthenticationService\\Application\\dto\\RegisterDto.cs",
               "RelativeDocumentMoniker": "AuthenticationService\\Application\\dto\\RegisterDto.cs",
@@ -99,25 +166,24 @@
               "RelativeToolTip": "AuthenticationService\\Application\\dto\\RegisterDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T15:02:45.477Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T15:02:45.477Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "AuthService.cs",
               "DocumentMoniker": "D:\\PRN232\\BackEndMusicAppWebApi\\AuthenticationService\\Application\\Services\\AuthService.cs",
               "RelativeDocumentMoniker": "AuthenticationService\\Application\\Services\\AuthService.cs",
               "ToolTip": "D:\\PRN232\\BackEndMusicAppWebApi\\AuthenticationService\\Application\\Services\\AuthService.cs",
               "RelativeToolTip": "AuthenticationService\\Application\\Services\\AuthService.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAA5wGMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAAAFAAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-11T14:58:36.822Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "AuthRepository.cs",
               "DocumentMoniker": "D:\\PRN232\\BackEndMusicAppWebApi\\AuthenticationService\\Infrastructure\\Repositories\\AuthRepository.cs",
               "RelativeDocumentMoniker": "AuthenticationService\\Infrastructure\\Repositories\\AuthRepository.cs",
@@ -125,12 +191,11 @@
               "RelativeToolTip": "AuthenticationService\\Infrastructure\\Repositories\\AuthRepository.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAqwCIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T14:59:41.511Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T14:59:41.511Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "AuthController.cs",
               "DocumentMoniker": "D:\\PRN232\\BackEndMusicAppWebApi\\AuthenticationService\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "AuthenticationService\\Controllers\\AuthController.cs",
@@ -138,8 +203,7 @@
               "RelativeToolTip": "AuthenticationService\\Controllers\\AuthController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T14:58:55.526Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T14:58:55.526Z"
             }
           ]
         },

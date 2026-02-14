@@ -565,6 +565,29 @@
         }
       }
     },
+    "/api/songs/singer/{singerId}": {
+      "get": {
+        "tags": [
+          "Song"
+        ],
+        "parameters": [
+          {
+            "name": "singerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/songs/{id}": {
       "get": {
         "tags": [

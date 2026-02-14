@@ -6,6 +6,7 @@ namespace MusicService.Domain.Repositories
     {
         Task<List<Song>> GetAllAsync();
         Task<(List<Song> Items, int TotalCount)> GetAllPagedAsync(int pageNumber, int pageSize);
+        Task<List<Song>> GetBySingerIdAsync(Guid singerId);
         Task<Song?> GetByIdAsync(Guid id);
         Task AddAsync(Song song);
         Task UpdateAsync(Song song);

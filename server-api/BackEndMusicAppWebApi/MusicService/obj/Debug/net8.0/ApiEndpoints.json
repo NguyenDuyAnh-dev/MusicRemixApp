@@ -435,6 +435,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MusicService.Controllers.SongController",
+    "Method": "GetBySingerId",
+    "RelativePath": "api/songs/singer/{singerId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "singerId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MusicService.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

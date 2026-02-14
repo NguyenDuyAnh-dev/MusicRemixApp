@@ -33,3 +33,26 @@ export const getSingersPaged = (
     }
   );
 };
+
+// api create singer
+export const createSinger = (formData: FormData) => {
+  return axiosClient.post("/singers", formData, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
+};
+
+// UPDATE
+export const updateSinger = (id: string, formData: FormData) => {
+  return axiosClient.put(`/singers/${id}`, formData, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
+};
+
+// DELETE
+export const deleteSinger = (id: string) => {
+  return axiosClient.delete(`/singers/${id}`);
+};
