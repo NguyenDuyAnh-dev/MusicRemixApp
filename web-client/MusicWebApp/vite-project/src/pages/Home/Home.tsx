@@ -87,6 +87,7 @@ export default function Home() {
           {singers.map(s => (
             <div
               key={s.id}
+              onClick={() => navigate(`/singer/${s.id}`)}
               className="bg-neutral-800 rounded-2xl px-3 pt-6 pb-2 flex flex-col items-center text-center text-white hover:bg-neutral-700 transition"
             >
               <img

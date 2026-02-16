@@ -1,41 +1,16 @@
-import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { getSingerById, updateSinger } from "../../api/singer.api";
+
+import { useUpdateSingerPage } from "../../hooks/useUpdateSingerPage";
 
 export default function UpdateSingerPage() {
-  const { id } = useParams();
-  const navigate = useNavigate();
-
-  const [name, setName] = useState("");
-  const [avatar, setAvatar] = useState<File | null>(null);
-  const [preview, setPreview] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchSinger = async () => {
-      if (!id) return;
-
-      const res = await getSingerById(id);
-      setName(res.data.name);
-      setPreview(res.data.avatarUrl);
-    };
-
-    fetchSinger();
-  }, [id]);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!id) return;
-
-    const formData = new FormData();
-    formData.append("Name", name);
-
-    if (avatar) {
-      formData.append("Avatar", avatar);
-    }
-
-    await updateSinger(id, formData);
-    navigate("/singers");
-  };
+  const {
+    name,
+    setName,
+    avatar,
+    setAvatar,
+    preview,
+    setPreview,
+    handleSubmit
+  } = useUpdateSingerPage();
 
   return (
     <div className="max-w-2xl mx-auto bg-neutral-900 p-8 rounded-2xl shadow mt-10">

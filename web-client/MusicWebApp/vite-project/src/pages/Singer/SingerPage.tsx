@@ -49,24 +49,32 @@ export default function SingerPage() {
         {singers.map((singer) => (
           <div
             key={singer.id}
-            className="group relative bg-neutral-800 rounded-2xl px-3 pt-6 pb-2 flex flex-col items-center text-center hover:bg-neutral-700 transition"
+            onClick={() => navigate(`/singer/${singer.id}`)}
+            className="group relative bg-neutral-800 rounded-2xl px-3 pt-6 pb-2 flex flex-col items-center text-center hover:bg-neutral-700 transition cursor-pointer"
           >
             {/* ACTION BUTTONS (HOVER) */}
             {isAdmin && (
               <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition flex gap-2">
                 <button
-                  onClick={() => navigate(`/singer/update/${singer.id}`)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigate(`/singer/update/${singer.id}`);
+                  }}
                   className="px-2 py-1 text-xs bg-blue-600 hover:bg-blue-700 rounded text-white"
                 >
                   Update
                 </button>
 
                 <button
-                  onClick={() => handleDelete(singer.id)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleDelete(singer.id);
+                  }}
                   className="px-2 py-1 text-xs bg-red-600 hover:bg-red-700 rounded text-white"
                 >
                   Delete
                 </button>
+
               </div>
             )}
 

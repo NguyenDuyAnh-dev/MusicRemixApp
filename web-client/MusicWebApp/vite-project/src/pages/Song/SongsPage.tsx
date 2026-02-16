@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../auth/AuthContext";
 import { useSongs } from "../../hooks/useSongs";
 import { deleteSong } from "../../api/song.api";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 export default function SongsPage() {
 
@@ -18,7 +19,10 @@ export default function SongsPage() {
     setPage,
     singerMap,
     loading,
-    formatDuration
+    formatDuration,
+    favoriteMap,
+    setFavoriteMap,
+    handleToggleFavorite
   } = useSongs(8);
 
   const handleDelete = async (id: string) => {
@@ -106,9 +110,21 @@ export default function SongsPage() {
               )}
             </span>
 
-            <span className="col-span-2 text-center text-pink-400 text-xl">
-              ❤
+            <span
+              onClick={(e) => {
+                e.stopPropagation();
+                handleToggleFavorite(song.id);
+              }}
+              className="col-span-2 text-center cursor-pointer flex justify-center"
+            >
+              {favoriteMap[song.id] ? (
+                <FaHeart className="text-pink-500 text-xl hover:scale-110 transition" />
+              ) : (
+                <FaRegHeart className="text-neutral-400 text-xl hover:text-pink-400 hover:scale-110 transition" />
+              )}
             </span>
+
+
 
             <span className="col-span-2 text-right">
               {formatDuration(song.duration)}

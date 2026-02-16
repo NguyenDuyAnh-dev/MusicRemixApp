@@ -13,6 +13,7 @@ import { CreateSongPage } from "./pages/Song/CreateSongPage";
 import CreateSingerPage from "./pages/Singer/CreateSingerPage";
 import UpdateSingerPage from "./pages/Singer/UpdateSingerPage";
 import UpdateSongPage from "./pages/Song/UpdateSongPage";
+import SingerDetailPage from "./pages/Singer/SingerDetailPage";
 
 
 
@@ -24,14 +25,8 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
 
         <Route path="/playlist" element={<PlaylistPage />} />
-        <Route
-          path="/singer"
-          element={
-            <ProtectedRoute>
-              <SingerPage />
-            </ProtectedRoute>
-          }
-        />
+        <Route path="/singer" element={ <SingerPage /> } />
+        <Route path="/singer/:id" element={<SingerDetailPage />} />
         <Route path="/singer/create" element={<CreateSingerPage />} />
         <Route path="/singer/update/:id" element={<UpdateSingerPage />} />
 

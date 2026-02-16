@@ -1,42 +1,19 @@
-import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { updateSong } from "../../api/song.api";
-import axiosClient from "../../api/axiosClient";
+
+import { useUpdateSongPage } from "../../hooks/useUpdateSongPage";
 
 export default function UpdateSongPage() {
-  const { songId } = useParams();
-  const navigate = useNavigate();
-
-  const [title, setTitle] = useState("");
-  const [avatar, setAvatar] = useState<File | null>(null);
-  const [audio, setAudio] = useState<File | null>(null);
-  const [preview, setPreview] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchSong = async () => {
-      if (!songId) return;
-
-      const res = await axiosClient.get(`/songs/${songId}`);
-      setTitle(res.data.title);
-      setPreview(res.data.avatarUrl);
-    };
-
-    fetchSong();
-  }, [songId]);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!songId) return;
-
-    const formData = new FormData();
-    formData.append("Title", title);
-
-    if (avatar) formData.append("Avatar", avatar);
-    if (audio) formData.append("Audio", audio);
-
-    await updateSong(songId, formData);
-    navigate("/songs");
-  };
+  const {
+    songId,
+    title,
+    setTitle,
+    avatar,
+    setAvatar,
+    audio,
+    setAudio,
+    preview,
+    setPreview,
+    handleSubmit
+  } = useUpdateSongPage();
 
   return (
     <div className="max-w-2xl mx-auto bg-neutral-900 p-8 rounded-2xl shadow mt-10">

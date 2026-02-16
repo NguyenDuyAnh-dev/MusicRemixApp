@@ -21,6 +21,8 @@ npx tailwindcss init -p
 MUI: npm install @mui/material @emotion/react @emotion/styled
 cai Heroicon cua tailwind de su dung icon: npm install @heroicons/react
 cai de decode jwt: npm i jwt-decode
+cai de su dung icon: npm install react-icons
+hoac cai cai nay de su dung icon: npm install @heroicons/react
 
 neu cai npx tailwindcss init -p theo cach tren ko dc thi cai thu cong nhu sau:
 Tao file ngang cap vs src

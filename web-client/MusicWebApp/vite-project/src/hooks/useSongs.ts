@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getSongsPaged, type Song } from "../api/song.api";
 import { getSingerById, type Singer } from "../api/singer.api";
+import { addFavorite, removeFavorite, getFavoriteSongsPaged } from "../api/favorite.api";
 
 export function useSongs(pageSize = 8) {
   const [songs, setSongs] = useState<Song[]>([]);
@@ -8,6 +9,8 @@ export function useSongs(pageSize = 8) {
   const [totalPages, setTotalPages] = useState(1);
   const [singerMap, setSingerMap] = useState<Record<string, Singer>>({});
   const [loading, setLoading] = useState(true);
+  const [favoriteMap, setFavoriteMap] = useState<Record<string, boolean>>({});
+
 
   useEffect(() => {
     loadSongs();
@@ -20,16 +23,35 @@ export function useSongs(pageSize = 8) {
   const loadSongs = async () => {
     try {
       setLoading(true);
-      const res = await getSongsPaged(page, pageSize);
 
-      setSongs(res.data.content);
-      setTotalPages(res.data.totalPages);
+      // gọi song + favorite song song
+      const [songRes, favRes] = await Promise.all([
+        getSongsPaged(page, pageSize),
+        getFavoriteSongsPaged(page, pageSize)
+      ]);
+
+      const songList = songRes.data.content;
+      const favoriteList = favRes.data.content;
+
+      setSongs(songList);
+      setTotalPages(songRes.data.totalPages);
+
+      // build favorite map
+      const favMap: Record<string, boolean> = {};
+
+      favoriteList.forEach(favSong => {
+        favMap[favSong.id] = true;
+      });
+
+      setFavoriteMap(favMap);
+
     } catch (error) {
       console.error("Failed to load songs", error);
     } finally {
       setLoading(false);
     }
   };
+
 
   const loadSingersForSongs = async () => {
     const missingSingerIds = songs
@@ -64,6 +86,33 @@ export function useSongs(pageSize = 8) {
     return `${m}:${s.toString().padStart(2, "0")}`;
   };
 
+  const handleToggleFavorite = async (songId: string) => {
+    const isFavorite = favoriteMap[songId];
+
+    // update UI trước
+    setFavoriteMap(prev => ({
+      ...prev,
+      [songId]: !isFavorite
+    }));
+
+    try {
+      if (isFavorite) {
+        await removeFavorite(songId);
+      } else {
+        await addFavorite(songId);
+      }
+    } catch (err) {
+      // rollback nếu lỗi
+      setFavoriteMap(prev => ({
+        ...prev,
+        [songId]: isFavorite
+      }));
+      console.error(err);
+    }
+  };
+
+
+
   return {
     songs,
     page,
@@ -71,6 +120,9 @@ export function useSongs(pageSize = 8) {
     setPage,
     singerMap,
     loading,
-    formatDuration
+    formatDuration,
+    favoriteMap,
+    setFavoriteMap,
+    handleToggleFavorite,
   };
 }

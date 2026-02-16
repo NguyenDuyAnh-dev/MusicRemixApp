@@ -38,6 +38,12 @@ export const getSongById = (id: string) => {
   return axiosClient.get<Song>(`/songs/${id}`);
 };
 
+// get songs by singer id
+export const getSongsBySinger = (singerId: string) => {
+  return axiosClient.get<Song[]>(`/songs/singer/${singerId}`);
+};
+
+
 // create song
 export const createSong = async (
   singerId: string,
